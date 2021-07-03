@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+table{
+    border-collapse: collapse;
+    border: 1px solid black;
+   
+    margin: 20px auto;
+}
+td{
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+input{
+    margin: 0;
+    width: 100%;
+    /* height: 100%; */
+    /* display: block; */
+    /* border-color: transparent; */
+}
+.info{
+    height: 29px;
+}
+button{
+    display: block;
+    position: absolute;
+    bottom: -30px;  
+    right: 81px;
+    /* top: 0;
+    left: 0; */
+} 
+.relative{
+    position: relative; 
+}
