@@ -1,0 +1,138 @@
+$orange: #ffe461;
+$background: #fdea8e;
+$twenty: 20px;
+$shadow: 2px 2px 15px rgba(0, 0, 0, 0.12);
+$marginLi: 40px 10px 0px 10px;
+
+%input-props {
+  padding: 10px;
+  margin: $twenty;
+  border-radius: 4px;
+}
+%form-props  {
+  margin: $twenty;
+  background-color:#fdf880;
+  box-shadow: $shadow;
+}
+%button-props{
+  background:$orange;
+  font-size: 1rem;
+  border-radius: 1rem;
+  padding:1rem;
+}
+%li-props{
+  border-radius: 5px;
+  background-color: #fdf880;
+}
+%list-props{
+  color:black;
+  font-size:14px;
+  font-family:Georgia, Times, serif;
+  margin-right: 35px; 
+  flex-wrap: wrap; 
+}
+
+
+body {
+  background-color: $background;
+  font-family: sans-serif,serif;
+}
+.container {
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1000px;
+  min-height: 900px;
+}
+.App {
+  padding: 30px; 
+  text-align: center;
+}
+.Post{
+  .someText{
+    @extend %form-props;
+    display: flex;
+    flex-wrap: wrap;
+  }
+    textarea{
+      @extend %input-props;
+      flex-basis: 80%;
+      background-color: #fffcaf;
+      border-color: #e8e475;
+    }
+    .save{
+      margin-top: $twenty;
+      height: 50px;
+      flex-basis: 10%;
+      @extend %button-props;
+    }
+  .searchTag{
+    @extend %form-props;
+    flex-basis: 70%;
+    display:inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+    input{
+      @extend %input-props; 
+    }
+    .tagButton{
+      @extend %button-props;
+      flex-direction: column;
+      justify-content: center;
+      max-height: 30px;
+      margin: 1rem $twenty 0px 0px;
+      color: black;
+    }
+  .listBox{
+    @extend %list-props;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-position: inside;
+    list-style-type: upper-roman;
+    .notes{
+      @extend %li-props;
+      margin: $twenty;
+      padding: $twenty;
+      .someNote{
+        flex-grow: 1;
+      }
+      .delNote{
+        margin: $marginLi;
+        border-radius: 15px;
+        padding: 15px 15px;
+        background-color: #ffe461;
+      }
+      .changeNote{
+        margin: $marginLi;
+        border-radius: 15px;
+        padding: 15px 15px;
+        background-color: #ffe461;
+      }
+    }}
+  .containerNote{
+    @extend %list-props;
+    display: inline-flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+    .tags{
+      @extend %li-props;
+      padding: 10px;
+      margin: 3px;
+    }
+    .delTag{
+      margin-top: 20px; 
+      padding: 10px 15px;
+      border-radius: 10px;
+      background-color: #ffe461;
+      border: none;
+    }
+  }     
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    background-color: #fdea8e;
+  }
+}
